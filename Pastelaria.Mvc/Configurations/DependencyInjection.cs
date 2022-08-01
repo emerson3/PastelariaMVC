@@ -1,5 +1,3 @@
-using Pastelaria.Core.Settings;
-
 namespace Pastelaria.Mvc.Configurations
 {
     public static class DependencyInjection
@@ -15,8 +13,10 @@ namespace Pastelaria.Mvc.Configurations
 
             services.AddControllersWithViews();
 
-            // services.AddScoped<Notification>();
-            // services.AddScoped<ApplicationDbContext>();
+            services.AddScoped<Notification>();
+            services.AddScoped<ApplicationDbContext>();
+
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         }
     }
 }

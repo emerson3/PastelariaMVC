@@ -1,0 +1,53 @@
+@{
+    Layout = null;
+    ViewData["Title"] = "Pastelaria - Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/lib/iziToast/css/iziToast.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/Login/login.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="tela-login">
+        <img src="~/img/logo.png" />
+        <form class="form-login" id="form-login" onsubmit="login.login()">
+            <div class="text-field">
+                <label>E-mail</label>
+            <div class="input-email">
+                <input type="email" placeholder="Digite seu e-mail" name="Email" />
+            </div>
+            </div>
+            <div class="text-field" data-container-input-olho>
+                <label>Senha</label>
+                    <div class="caixa-input-olho">
+                        <input id="Senha" type="password" placeholder="Digite sua senha" name="Senha" maxlength="30" data-password/>
+                        <a data-display-password><span id="OlhoSenha" class="olho-senha" uk-icon="olho-mostrar-senha" data-eye></span></a>
+                    </div>
+            </div>
+            <button type="submit" value="Entrar">Entrar</button>
+        </form>
+    </div>
+    <script src="~/lib/iziToast/js/iziToast.min.js"></script>
+    <script src="~/lib/uikit/js/uikit.min.js"></script>
+    <script src="~/lib/uikit/js/uikit-icons.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script src="~/js/site.js"></script>
+    <script src="~/js/pages/login.js"></script>
+    <script>
+        login.init({
+            urls: {
+                login: '@Url.Action("Login")',
+                home: '@Url.Action("Index", "Home")'
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-using Pastelaria.Core.Settings;
-
 namespace Pastelaria.Data
 {
     public class ApplicationDbContext : BaseDbContext
@@ -9,6 +6,8 @@ namespace Pastelaria.Data
         {
 
         }
-        
+
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Tarefa> Tarefas { get; set; }
     }
 }

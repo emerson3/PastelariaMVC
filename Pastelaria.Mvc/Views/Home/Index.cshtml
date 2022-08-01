@@ -1,8 +1,73 @@
-﻿@{
+﻿@model TarefaViewModel;
+@{
+    Layout = null;
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/css/Home/home.css" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="content">
+        <div class="content-side-menu">
+            <img src="~/img/logo.png" />
+            <div class="menu">
+                <ul>
+                    <li>Cadastrar tarefa</li>
+                    <li>Cadastrar usuário</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-kanban">
+            <div class="boards">
+                <div class ="card">
+                    <h1>a fazer</h1>
+                    @foreach (var item in Model.Tarefas)
+                    {
+                        if(item.IdTarefaStatus == 1)
+                        {
+                            <div class="content-card">
+                                <h3>@item.Titulo</h3>
+                                <h4>@item.Descricao</h4>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class ="card">
+                    <h1>Em progresso</h1>
+                    @foreach (var item in Model.Tarefas)
+                    {
+                        if(item.IdTarefaStatus == 2)
+                        {
+                            <div class="content-card">
+                                <h3>@item.Titulo</h3>
+                                <h4>@item.Descricao</h4>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class ="card">
+                    <h1>Concluído</h1>
+                    @foreach (var item in Model.Tarefas)
+                    {
+                        if(item.IdTarefaStatus == 3)
+                        {
+                            <div class="content-card">
+                                <h3>@item.Titulo</h3>
+                                <h4>@item.Descricao</h4>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
+

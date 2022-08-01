@@ -1,4 +1,4 @@
-namespace Pastelaria.Data.Repositories
+namespace Pastelaria.Data.Repositories.Base
 {    
     public class DbTransaction : IDbTransaction
     {

@@ -1,31 +1,23 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using Pastelaria.Mvc.Models;
-
-namespace Pastelaria.Mvc.Controllers;
-
-public class HomeController : Controller
+﻿namespace Pastelaria.Mvc.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : AuthenticatedController
     {
-        _logger = logger;
-    }
+        private readonly AppSettings _appSettings;
+        private readonly IUsuarioRepository _usuarioRepository;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public HomeController(IUsuarioRepository usuarioRepository, AppSettings appSettings)
+        {
+            _usuarioRepository = usuarioRepository;
+            _appSettings = appSettings;
+        }
+        public async Task<IActionResult> Index(TarefaViewModel tarefaViewModel)
+        {
+            var Tarefas = await _usuarioRepository.BuscarPorTarefaAsync();
+            
+            tarefaViewModel.Tarefas = Tarefas;
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(tarefaViewModel);
+            
+        }
     }
 }

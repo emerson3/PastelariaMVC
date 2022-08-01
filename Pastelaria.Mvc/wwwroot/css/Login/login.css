@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+body {
+    background-color: #FCD945;
+}
+
+.tela-login {
+    text-align: center;
+}
+
+.tela-login img {
+    width: 300px;
+    padding-top: 170px;
+}
+
+.text-field {
+    display: block;
+}
+
+.text-field input {
+    border-radius: 10px;
+    border: none;
+    width: 220px;
+    height: 29px;
+}
+
+.form-login button {
+    margin-top: 15px;
+    width: 80px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    color: #1E1E1E;
+}
+
+.text-field input::placeholder {
+    padding-left: 10px;
+}
+
+.text-field label {
+    margin-right: 150px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    color: #1E1E1E;
+}
+
+.uk-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.inputs-mostrar-senha {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.olho-senha {
+    position: absolute;
+    top: 0;
+    margin-top: 4px;
+    margin-left: -25.7px;
+    z-index: 10;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.caixa-input-olho {
+    position: relative;
+    width: 100%;
+}
+
+.caixa-input-olho .Senha {
+    width: 100%;
+}
