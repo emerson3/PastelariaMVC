@@ -10,6 +10,10 @@
     line-height: 24px;
 }
 
+body {
+    background-color: #D9D9D9;
+}
+
 .parte-superior {
     width: 100vw;
     height: 7vh;
@@ -26,4 +30,33 @@
     position: relative;
     text-align: center;
     margin-top: -20px;
+}
+
+.conteudo-direita {
+    float: right;
+}
+
+.funcionarios {
+    list-style: none;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFF;
+    width: 300px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.conteudo-direita .input-descricao {
+    width: 100px;
+}
+
+.lista-funcionario img {
+    width: 20px;
+}
+
+.lista-funcionario {
+    display: flex;
+    flex-direction: row;
+    padding-top: 6px;
+    justify-content: space-between;    
 }

@@ -14,11 +14,9 @@ namespace Pastelaria.Mvc.Controllers
 
         public async Task<IActionResult> Index(UsuarioViewModel usuarioViewModel)
         {
-            var usuarios = await _usuarioRepository.BuscarAsync();
-
-            usuarioViewModel.Usuarios = usuarios;
+            var usuario = await _usuarioRepository.BuscarAsync();
             
-            return View("Index", usuarioViewModel);
+            return View("Index", usuario);
         }
     }
 }

@@ -1,4 +1,4 @@
-@model UsuarioViewModel;
+@model IEnumerable<Usuario>
 
 @{
     Layout = null;
@@ -16,18 +16,20 @@
             <h3>Título</h3>
             <input type="text" />
             <h3>Descrição</h3>
-            <input type="textarea" class="input-descricao" />
+            <input type="text" class="input-descricao" />
         </form>
     </div>
     
     <div class="conteudo-direita">
         <h3>Funcionários</h3>
         <div class="funcionarios">
-            @foreach (var item in Model.Usuarios)
+            @foreach (var item in Model)
             {
-                <li>@item.<a href=""><img src="~/img/more.png" /></a></li>
+                <div class="lista-funcionario">
+                    <li>@item.Nome</li>
+                    <input type="radio"name="IdUsuarioCadastro" value="@item.Id" />
+                </div>
             }
         </div>
     </div>
-
 </div>
