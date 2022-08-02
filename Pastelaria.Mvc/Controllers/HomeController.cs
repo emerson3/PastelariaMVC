@@ -12,10 +12,19 @@
         }
         public async Task<IActionResult> Index(TarefaViewModel tarefaViewModel)
         {
-            var Tarefas = await _usuarioRepository.BuscarPorTarefaAsync();
             
-            tarefaViewModel.Tarefas = Tarefas;
+            var InformacoesUsuario = HttpContext.Session.Get<Usuario>("Usuario");
+            var usuario = await _usuarioRepository.BuscarPorEmailAsync(InformacoesUsuario.Email);
+            if (usuario.IdTipoUsuario == 1)
+            {
+                var TarefasBuscadas = await _usuarioRepository.BuscarTarefasAsync(usuario.Id);
 
+                tarefaViewModel.Tarefas = TarefasBuscadas;
+            } else {
+                var Tarefas = await _usuarioRepository.TodasTarefasAsync();
+                tarefaViewModel.Tarefas = Tarefas;
+            }
+            
             return View(tarefaViewModel);
             
         }

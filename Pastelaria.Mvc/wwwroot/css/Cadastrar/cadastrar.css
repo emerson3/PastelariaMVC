@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.parte-superior {
+    width: 100vw;
+    height: 7vh;
+    background-color: #E4B80A;
+}
+
+.parte-superior img {
+    transform:rotate(180deg);
+    width: 30px;
+    margin-top: 5px;
+}
+
+.parte-superior h3 {
+    position: relative;
+    text-align: center;
+    margin-top: -20px;
+}

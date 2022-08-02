@@ -9,5 +9,6 @@ namespace Pastelaria.Data
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Tarefa> Tarefas { get; set; }
+        public DbSet<UsuarioTarefa> UsuariosTarefas { get; set; }
     }
 }

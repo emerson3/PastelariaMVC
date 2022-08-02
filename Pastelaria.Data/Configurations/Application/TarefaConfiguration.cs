@@ -15,6 +15,8 @@ namespace Pastelaria.Data.Configurations.Application
             builder.Property(x => x.DataCriacao).HasColumnName("dataCriacao").HasMaxLength(30);
             builder.Property(x => x.DataConclusao).HasColumnName("dataConclusao");
             builder.Property(x => x.IdUsuarioCadastro).HasColumnName("idUsuarioCadastro");
+
+            builder.HasMany(x => x.UsuarioTarefas).WithOne(x => x.Tarefa).HasForeignKey(x => x.IdTarefa);
         }
     }
 }

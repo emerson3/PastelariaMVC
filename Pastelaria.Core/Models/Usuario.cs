@@ -9,5 +9,7 @@ namespace Pastelaria.Core.Models
         public string Senha { get; set; }
         public DateTime DataExpiracaoSenha { get; set; }
         public int IdUsuarioCadastro { get; set; }
+        
+        public IEnumerable<UsuarioTarefa> UsuarioTarefas {get; set; }
     }
 }

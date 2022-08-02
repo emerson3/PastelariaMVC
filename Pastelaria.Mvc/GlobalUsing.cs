@@ -9,4 +9,6 @@ global using Pastelaria.Core.Models;
 global using Microsoft.AspNetCore.Mvc.Filters;
 global using Pastelaria.Core.Extensions;
 global using Pastelaria.Mvc.ViewModels.Login;
-global using Pastelaria.Mvc.ViewModels.Tarefa;
+global using Pastelaria.Mvc.ViewModels.Tarefa; 
+global using Pastelaria.Mvc.ViewModels.Usuario; 
+global using Pastelaria.Core.Models;
