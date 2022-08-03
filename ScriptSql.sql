@@ -28,7 +28,7 @@ CREATE TABLE dbo.tarefa (
 	id                   int    IDENTITY  NOT NULL,
 	idTarefaStatus       int      NOT NULL,
 	descricao            varchar(2000)      NOT NULL,
-	tarefa				 varchar(50)	      NOT NULL,
+	titulo				 varchar(50)	      NOT NULL,
 	dataCriacao          datetime      NOT NULL,
 	dataConclusao        datetime      NULL,
 	idUsuarioCadastro    int      NOT NULL,
