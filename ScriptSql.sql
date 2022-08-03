@@ -71,3 +71,8 @@ GO
 
 ALTER TABLE dbo.usuarioTarefa ADD CONSTRAINT fk_usuariotarefa_tarefa FOREIGN KEY ( idTarefa ) REFERENCES dbo.tarefa( id );
 GO
+
+INSERT INTO tipoUsuario(id, descricao) VALUES(1, 'Gestor')
+INSERT INTO tipoUsuario(id, descricao) VALUES(2, 'Funcionário')
+
+INSERT INTO usuario(idTipoUsuario, nome, email, senha, dataExpiracaoSenha, idUsuarioCadastro) VALUES (1, 'Cayo', 'cayo@gmail.com', 'cayo', '20230202', 0)
