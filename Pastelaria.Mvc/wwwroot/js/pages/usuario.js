@@ -36,7 +36,6 @@ var usuario = (function () {
 
     function visualizarTarefa(id) {
         var teste = $('#idTarefa').val(id);
-        console.log(teste)
         $.get(configs.urls.VerTarefa, teste).done(function (html){
             $('.content').hide();
             $('#Teste').show();
@@ -47,8 +46,7 @@ var usuario = (function () {
 
     function editar() {
         model = $('#form-editar').serializeObject();
-        console.log(model);
-        console.log(configs.urls.editarTarefa);
+        
         $.post(configs.urls.editarTarefa, model).done(function() {
             site.toast.success("Alterado com sucesso!");
         }).fail(function(msg) {

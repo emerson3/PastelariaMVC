@@ -27,8 +27,6 @@ namespace Pastelaria.Mvc.Controllers
         [HttpPost("cadastrar-tarefa")]
         public async Task<IActionResult> CadastrarTarefa(CadastrarViewModel cadastrarViewModel)
         {
-
-            Console.WriteLine(cadastrarViewModel.Descricao);
             if (cadastrarViewModel == null)
                 return BadRequest("Nenhum parâmetro foi enviado");
 
@@ -47,8 +45,6 @@ namespace Pastelaria.Mvc.Controllers
         [HttpPost("cadastrar-usuario")]
         public async Task<IActionResult> CadastrarUsuario(CadastrarUsuarioViewModel cadastrarUsuarioViewModel)
         {
-
-            Console.WriteLine(cadastrarUsuarioViewModel.Email);
             if (cadastrarUsuarioViewModel == null)
                 return BadRequest("Nenhum parâmetro foi enviado");
 
@@ -72,7 +68,6 @@ namespace Pastelaria.Mvc.Controllers
         [HttpGet("tarefa")]
         public async Task<IActionResult> VisualizarTarefa(int Id)
         {
-            Console.WriteLine(Id);
             var tarefa = await _usuarioRepository.FiltrarTarefasAsync(Id);
 
             return View("_MostrarTarefa", tarefa);
@@ -81,10 +76,6 @@ namespace Pastelaria.Mvc.Controllers
         [HttpPost("editar")]
         public async Task<IActionResult> EditarTarefa(TarefaViewModel tarefaViewModel)
         {
-            Console.WriteLine(tarefaViewModel.Id);
-            Console.WriteLine(tarefaViewModel.Id);
-            Console.WriteLine(tarefaViewModel.Id);
-            Console.WriteLine(tarefaViewModel.Id);
 
             if (tarefaViewModel == null)
                 return BadRequest("Nenhum dado enviado.");

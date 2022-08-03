@@ -18,8 +18,6 @@
             var InformacoesUsuario = HttpContext.Session.Get<Usuario>("Usuario");
             var usuario = await _usuarioRepository.BuscarPorEmailAsync(InformacoesUsuario.Email);
 
-            Console.WriteLine(usuario.IdTipoUsuario);
-
             if (usuario.IdTipoUsuario == 2)
             {
                 var TarefasBuscadas = await _usuarioRepository.BuscarTarefasAsync(usuario.Id);
