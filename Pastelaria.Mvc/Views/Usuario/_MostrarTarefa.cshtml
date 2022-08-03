@@ -1,0 +1,47 @@
+@model IEnumerable<Tarefa>;
+@{
+    Layout = null;
+    ViewData["Title"] = "Visualizador de Tarefa";
+}
+<link rel="stylesheet" type="text/css" href="~/css/Tarefa/mostrarTarefa.css" />
+<link rel="stylesheet" type="text/css" href="~/lib/iziToast/css/iziToast.min.css" />
+
+<div class="conteudo">
+    <div class="parte-superior">
+        <a asp-controller="Home" asp-action="Index"><img src="~/img/right-arrow.png" /></a>
+        <h3>@ViewData["Title"]</h3>
+    </div>
+
+        <form id="form-editar" onsubmit="usuario.editar()">
+    @foreach (var item in Model)
+    {
+            <h1>numero da sua tarefa</h1>
+            <input type="text" name="Id" value="@item.Id" readonly />
+            }
+            <h1>titulo</h1>
+            <input type="text" name="Titulo" />
+            <h1>Descrição</h1>
+            <input type="text" name="Descricao" />
+            <li>A fazer</li>
+            <input type="radio" name="IdTarefaStatus" value="1" checked>
+            <li>Em progresso</li>
+            <input type="radio" name="IdTarefaStatus" value="2">
+            <li>Concluído</li>
+            <input type="radio" name="IdTarefaStatus" value="3">
+            <br />
+            <button>Editar</button>
+    
+        </form>
+    
+<script src="~/lib/iziToast/js/iziToast.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/site.js"></script>
+<script src="~/js/pages/usuario.js"></script>
+<script>
+    usuario.init({
+        urls: {
+            editarTarefa: '@Url.Action("EditarTarefa", "Usuario")'
+        }
+    })
+</script>

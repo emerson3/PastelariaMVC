@@ -17,7 +17,8 @@
 
 .content-side-menu {
     width: 20vw;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: auto;
     background-color: #C79E1F;
 }
 
@@ -32,7 +33,6 @@
 }
 
 .content-kanban {
-
     width: 80vw;
     height: 100vh;
 }

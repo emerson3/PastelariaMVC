@@ -1,0 +1,53 @@
+@model IEnumerable<Usuario>
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Cadastrar tarefa";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/Cadastrar/cadastrarTarefa.css" />
+<link rel="stylesheet" type="text/css" href="~/lib/iziToast/css/iziToast.min.css" />
+
+<div class="conteudo">
+    <div class="parte-superior">
+        <a asp-controller="Home" asp-action="Index"><img src="~/img/right-arrow.png" /></a>
+        <h3>@ViewData["Title"]</h3>
+    </div>
+    <div class="conteudo-esquerda">
+        <form id="form-cadastrar" onsubmit="usuario.cadastrar()">
+            <div class="conteudo-esquerda-superior">
+                <div class="titulo-tarefa">
+                    <h3>Título</h3>
+                    <input type="text" name="Titulo" required/>
+                </div>
+                <div class="funcionarios">
+                    <h3>Funcionários</h3>
+                    @foreach (var item in Model)
+                    {
+                        <div class="lista-funcionario">
+                            <li>@item.Nome</li>
+                            <input type="radio" name="IdUsuarioCadastro" value="@item.Id" required/>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="textfield">
+                <h3>Descrição</h3>
+                <input type="text" class="input-descricao" name="Descricao" required/>
+            </div>
+            <button>Salvar</button>
+        </form>
+    </div>
+</div>
+<script src="~/lib/iziToast/js/iziToast.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/site.js"></script>
+<script src="~/js/pages/usuario.js"></script>
+<script>
+    usuario.init({
+        urls: {
+            cadastrar: '@Url.Action("CadastrarTarefa", "Usuario")'
+        }
+    })
+</script>

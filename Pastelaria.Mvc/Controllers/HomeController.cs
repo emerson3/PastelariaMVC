@@ -12,10 +12,15 @@
         }
         public async Task<IActionResult> Index(TarefaViewModel tarefaViewModel)
         {
+            if(tarefaViewModel == null)
+                return BadRequest("Nenhuma tarefa encontrada!");
             
             var InformacoesUsuario = HttpContext.Session.Get<Usuario>("Usuario");
             var usuario = await _usuarioRepository.BuscarPorEmailAsync(InformacoesUsuario.Email);
-            if (usuario.IdTipoUsuario == 1)
+
+            Console.WriteLine(usuario.IdTipoUsuario);
+
+            if (usuario.IdTipoUsuario == 2)
             {
                 var TarefasBuscadas = await _usuarioRepository.BuscarTarefasAsync(usuario.Id);
 

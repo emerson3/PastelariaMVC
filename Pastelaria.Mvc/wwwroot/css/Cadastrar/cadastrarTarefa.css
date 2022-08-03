@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+body {
+    background-color: #D9D9D9;
+}
+
+.parte-superior {
+    width: 100vw;
+    height: 7vh;
+    background-color: #E4B80A;
+}
+
+.parte-superior img {
+    transform:rotate(180deg);
+    width: 30px;
+    margin-top: 5px;
+}
+
+.parte-superior h3 {
+    position: relative;
+    text-align: center;
+    margin-top: -20px;
+}
+
+
+.lista-funcionario {
+    list-style: none;
+    border-radius: 2px;
+    border: none;
+    background-color: #FFF;
+    width: 300px;
+    padding-bottom: 35px;
+}
+
+.conteudo-direita {
+    position: relative;
+    float: right;
+    margin-top: -180px;
+}
+
+.textfield input {
+    width: 600px;
+    height: 300px;
+}
+
+.conteudo-esquerda-superior input {
+    width: 600px;
+}
+
+.textfield {
+    padding-left: 50px;
+}
+
+.lista-funcionario img {
+    width: 20px;
+}
+
+.conteudo-esquerda-superior{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-right: 100px;
+}
+
+.lista-funcionario {
+    display: flex;
+    flex-direction: row;
+    padding-top: 9px;
+    justify-content: space-between;    
+}

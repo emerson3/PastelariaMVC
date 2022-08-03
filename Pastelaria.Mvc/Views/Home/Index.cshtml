@@ -6,68 +6,87 @@
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="~/css/Home/home.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/iziToast/css/iziToast.min.css" />
     <title>@ViewData["Title"]</title>
 </head>
+
 <body>
+    <div id="Teste"></div>
     <div class="content">
         <div class="content-side-menu">
             <img src="~/img/logo.png" />
             <div class="menu">
                 <ul>
-                    <li><a asp-controller="Usuario" asp-action="Index">Cadastrar tarefa</a></li>
-                    <li>Cadastrar usuário</li>
+                    <li><a asp-controller="Usuario" asp-action="IndexTarefa">Cadastrar tarefa</a></li>
+                    <li><a asp-controller="Usuario" asp-action="IndexUsuario">Cadastrar usuário</a></li>
                 </ul>
             </div>
         </div>
+
         <div class="content-kanban">
             <div class="boards">
-                <div class ="card">
+                <div class="card">
                     <h1>a fazer</h1>
                     @foreach (var item in Model.Tarefas)
                     {
-                        if(item.IdTarefaStatus == 1)
+                        if (item.IdTarefaStatus == 1)
                         {
                             <div class="content-card">
                                 <h3>@item.Titulo</h3>
-                                <h4>@item.Descricao</h4>
+                                <a name="Teste" id="Teste" value="Teste"><img src="~/img/edit.png" width="30" height="30"
+                                onclick="usuario.visualizarTarefa(@item.Id)" name="Id" id="idTarefa"></a>
                             </div>
                         }
                     }
                 </div>
-                <div class ="card">
+                <div class="card">
                     <h1>Em progresso</h1>
                     @foreach (var item in Model.Tarefas)
                     {
-                        if(item.IdTarefaStatus == 2)
+                        if (item.IdTarefaStatus == 2)
                         {
                             <div class="content-card">
                                 <h3>@item.Titulo</h3>
-                                <h4>@item.Descricao</h4>
+                                <a name="Teste" id="Teste" value="Teste"><img src="~/img/edit.png" width="30" height="30"
+                                onclick="usuario.visualizarTarefa(@item.Id)" name="Id" id="idTarefa"></a>
                             </div>
                         }
                     }
                 </div>
-                <div class ="card">
+                <div class="card">
                     <h1>Concluído</h1>
                     @foreach (var item in Model.Tarefas)
                     {
-                        if(item.IdTarefaStatus == 3)
+                        if (item.IdTarefaStatus == 3)
                         {
                             <div class="content-card">
                                 <h3>@item.Titulo</h3>
-                                <h4>@item.Descricao</h4>
+                                <a name="Teste" id="Teste" value="Teste"><img src="~/img/edit.png" width="30" height="30"
+                                onclick="usuario.visualizarTarefa(@item.Id)" name="Id" id="idTarefa"></a>
                             </div>
                         }
                     }
                 </div>
             </div>
         </div>
+        <script src="~/lib/iziToast/js/iziToast.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/js/site.js"></script>
+        <script src="~/js/pages/usuario.js"></script>
+        <script>
+            usuario.init({
+                urls: {
+                    VerTarefa: '@Url.Action("VisualizarTarefa", "Usuario")'
+                }
+            })
+        </script>
 </body>
+
 </html>
-
-

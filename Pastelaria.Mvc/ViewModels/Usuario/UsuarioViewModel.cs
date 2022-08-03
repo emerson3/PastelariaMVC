@@ -6,6 +6,7 @@ namespace Pastelaria.Mvc.ViewModels.Usuario
     {
 
     }   
-        public Core.Models.Usuario Usuarios { get; set; }
+        // public IEnumerable<Core.Models.Usuario> Usuarios { get; set; }
+        public string Nome { get; set; }
     }
 }
